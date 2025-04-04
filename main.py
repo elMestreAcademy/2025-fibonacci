@@ -29,12 +29,15 @@ def fibonacci_recursivo_termino(n: int) -> int:
     return fibonacci_recursivo_termino(n - 1) + fibonacci_recursivo_termino(n - 2)
 
 
-if __name__ == "__main__":
-
-    for n in range(1, 10):
+def prueba_termino_nesimo(n_max):
+    for n in range(1, n_max):
         if n <= 0:
             exit("Necesito que n sea un entero positivo")
 
         print(fibonacci_iterativo_termino(n))
         print(fibonacci_recursivo_termino(n))
         print()
+
+
+if __name__ == "__main__":
+    prueba_termino_nesimo(15)
