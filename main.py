@@ -1,16 +1,13 @@
 def fibonacci_iterativo_termino(n: int) -> int:
-    if n <= 0:
-        exit("Necesito que n sea un entero positivo")
+
+    if n == 1:
+        return 0
+
+    if n == 2:
+        return 1
 
     penultimo = 0
     ultimo = 1
-
-    if n == 1:
-        return penultimo
-
-    if n == 2:
-        return ultimo
-
     # no calculamos los 2 primeros terminos
     # por que ya están calculados (ultimo y penultimo)
 
@@ -22,5 +19,21 @@ def fibonacci_iterativo_termino(n: int) -> int:
     return suma
 
 
+def fibonacci_recursivo_termino(n: int) -> int:
+    if n == 1:
+        return 0
+
+    if n == 2:
+        return 1
+
+    return fibonacci_recursivo_termino(n-1) + fibonacci_recursivo_termino(n-2)
+
+
 if __name__ == "__main__":
-    print(fibonacci_iterativo_termino(5))
+
+    n = 5
+    if n <= 0:
+        exit("Necesito que n sea un entero positivo")
+
+    print(fibonacci_iterativo_termino(n))
+    print(fibonacci_recursivo_termino(n))
