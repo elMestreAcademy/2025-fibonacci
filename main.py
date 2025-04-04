@@ -1,9 +1,15 @@
 def fibonacci_iterativo_termino(n: int) -> int:
-    if n < 3:
-        exit("Necesito que n sea igual o superior a 3")
+    if n <= 0:
+        exit("Necesito que n sea un entero positivo")
 
     penultimo = 0
     ultimo = 1
+
+    if n == 1:
+        return penultimo
+
+    if n == 2:
+        return ultimo
 
     # no calculamos los 2 primeros terminos
     # por que ya están calculados (ultimo y penultimo)
