@@ -26,14 +26,15 @@ def fibonacci_recursivo_termino(n: int) -> int:
     if n == 2:
         return 1
 
-    return fibonacci_recursivo_termino(n-1) + fibonacci_recursivo_termino(n-2)
+    return fibonacci_recursivo_termino(n - 1) + fibonacci_recursivo_termino(n - 2)
 
 
 if __name__ == "__main__":
 
-    n = 5
-    if n <= 0:
-        exit("Necesito que n sea un entero positivo")
+    for n in range(1, 10):
+        if n <= 0:
+            exit("Necesito que n sea un entero positivo")
 
-    print(fibonacci_iterativo_termino(n))
-    print(fibonacci_recursivo_termino(n))
+        print(fibonacci_iterativo_termino(n))
+        print(fibonacci_recursivo_termino(n))
+        print()
