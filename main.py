@@ -1,15 +1,20 @@
-print("Fibonacci")
+def fibonacci_iterativo_termino(n: int) -> int:
+    if n < 3:
+        exit("Necesito que n sea igual o superior a 3")
 
-n = 10
-penultimo = 0
-ultimo = 1
+    penultimo = 0
+    ultimo = 1
 
-if n < 3:
-    exit("Necesito que n sea igual o superior a 3")
+    # no calculamos los 2 primeros terminos
+    # por que ya están calculados (ultimo y penultimo)
 
-for i in range(2, n):
-    suma = ultimo + penultimo
-    penultimo = ultimo
-    ultimo = suma
+    for i in range(n - 2):
+        suma = ultimo + penultimo
+        penultimo = ultimo
+        ultimo = suma
 
-print(suma)
+    return suma
+
+
+if __name__ == "__main__":
+    print(fibonacci_iterativo_termino(5))
